@@ -1,0 +1,9 @@
+# 忽略所有文件夹下的文件
+record_wav/
+recognizd_wav_to_txt/
+spk_sorted_files/
+spk_combined_files/
+# 忽略输出文件
+output.txt
+*.pyc
+__pycache__/
