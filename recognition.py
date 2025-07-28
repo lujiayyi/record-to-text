@@ -10,6 +10,9 @@ model = AutoModel(model="paraformer-zh", model_revision="v2.0.4",
                   )
 
 wav_dir = "/Users/lujiayi/parameter/record_wav"
+output_dir = "/Users/lujiayi/parameter/recognizd_wav_to_txt"
+os.makedirs(output_dir, exist_ok=True)  # 确保输出目录存在
+
 wav_files = [f for f in os.listdir(wav_dir) if f.endswith('.wav')]
 for wav_file in wav_files:
     wav_path = os.path.join(wav_dir, wav_file)
@@ -17,7 +20,7 @@ for wav_file in wav_files:
     print(f"{wav_file}: {res}")
     # 保存每个识别结果到单独的txt文件
     txt_filename = os.path.splitext(wav_file)[0] + ".txt"
-    txt_path = os.path.join(wav_dir, txt_filename)
+    txt_path = os.path.join(output_dir, txt_filename)
     with open(txt_path, "w", encoding="utf-8") as f:
         f.write(str(res))
 

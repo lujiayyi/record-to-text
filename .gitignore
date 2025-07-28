@@ -2,6 +2,7 @@
 record_wav/
 recognizd_wav_to_txt/
 spk_sorted_files/
+extracted_txt/
 spk_combined_files/
 # 忽略输出文件
 output.txt
